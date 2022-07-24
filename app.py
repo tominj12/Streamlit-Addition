@@ -1,19 +1,12 @@
 import streamlit as st
-import pandas as pd
-from sklearn import datasets
-from sklearn.ensemble import RandomForestClassifier
-import pickle
 
-st.write("""
-# Subtraction of 2 given numbers
-
-This app will give the subtraction of two given numbers!
-""")
-#Get Input
-
-st.header('User Input Parameters')
-
-No1 = st.number_input("NO_1 ",min_value=0.0,max_value=2000000.0)
-No2 = st.number_input("NO_2 ",min_value=0.0,max_value=2000000.0)
-result= No1 - No2
-st.write(No1 ,' - ', No2,' = ',result)
+string = "Subtraction of Two Numbers"
+st.set_page_config(page_title=string, page_icon="➕")
+st.title('2 Numebers Addition')
+#x = st.number_input('Enter a number')
+num1 = st.number_input("Enter first number",min_value=0.0,max_value=100000000.0)
+num2 = st.number_input("Enter second number",min_value=0.0,max_value=100000000.0)
+if (num1).is_integer() and (num2).is_integer():
+    sum=num1-num2
+    st.write("the addition result is", sum)
+else:st.write("please enter integer number")
